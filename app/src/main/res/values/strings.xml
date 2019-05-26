@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SuratKesehatan2</string>
+    <string name="action_settings">Settings</string>
+    <string name="surat_keterangan_sehat">SURAT KETERANGAN SEHAT</string>
+    <string name="opening">Yang bertanda tangan di bawah ini, menerangkan bahwa</string>
+    <string name="nama">Nama</string>
+    <string name="berat_badan">Berat Badan</string>
+    <string name="tinggi_badan">Tinggi Badan</string>
+    <string name="keterangan_surat_kesehatan">Keterangan Surat Kesehatan</string>
+    <string name="dalam_kondisi">Dalam kondisi</string>
+    <string name="closing">Demikian, Agar di gunakan untuk sebaik-baiknya</string>
+    <string name="tertanda">Tertanda</string>
+    <string name="dokter">dr. Zainul Arif</string>
+    <string name="tekanan_darah">Tekanan Darah</string>
+</resources>
