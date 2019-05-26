@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                         database.execSQL(
                                 "DELETE FROM transaksi WHERE transaksi_id='" + transaksi_id + "'"
                         );
-                        Toast.makeText(MainActivity.this,"Data berhasil di hapus",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this,"Data berhasil dihapus",Toast.LENGTH_LONG).show();
                         Sk_adapter();
                     }
                 }
