@@ -1,4 +1,4 @@
-package com.sururiana.suratkesehatan;
+package com.sururiana.suratkesehatan2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.sururiana.suratkesehatan", appContext.getPackageName());
+        assertEquals("com.sururiana.suratkesehatan2", appContext.getPackageName());
     }
 }

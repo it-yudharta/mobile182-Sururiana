@@ -1,4 +1,4 @@
-package com.sururiana.suratkesehatan;
+package com.sururiana.suratkesehatan2;
 
 import org.junit.Test;
 

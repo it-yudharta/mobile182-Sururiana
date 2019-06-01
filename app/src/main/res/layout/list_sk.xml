@@ -6,7 +6,7 @@
     android:padding="5dp"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/text_no_id"
+        android:id="@+id/text_transaksi_id"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -26,14 +26,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/text_status"
-            android:text="Izin tidak masuk kerja" />
+            android:text="Mendaki gunung" />
 
         <TextView
             android:id="@+id/text_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="TIDAK SEHAT"
+            android:text="SEHAT"
             android:textSize="12sp"
             android:textStyle="bold"/>
     </RelativeLayout>
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_tanggal"
-        android:text="06 Juni 2019"
+        android:text="22 januari 2019"
         android:textSize="10sp"
         />
 
