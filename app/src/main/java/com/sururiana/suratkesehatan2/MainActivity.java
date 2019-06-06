@@ -25,15 +25,20 @@ import android.widget.Toast;
 
 import com.sururiana.suratkesehatan2.helper.SqliteHelper;
 
+import org.w3c.dom.Text;
+
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    TextView text_sehat, text_tdksehat, text_jumlah;
     ListView listsk;
     SwipeRefreshLayout swipe_refresh;
 
     SqliteHelper sqliteHelper;
-    String query_sk;
+    String query_sk, query_jumlah;
     Cursor cursor;
 
     ArrayList<HashMap<String, String>> arussk = new ArrayList<>();
@@ -47,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        text_sehat = (TextView) findViewById(R.id.text_sehat);
+        text_tdksehat = (TextView) findViewById(R.id.text_tdksehat);
+        text_jumlah = (TextView) findViewById(R.id.text_jumlah);
+
         listsk     = (ListView) findViewById(R.id.list_sk);
         swipe_refresh     = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
 
@@ -54,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 query_sk = "SELECT *, strftime('%d/%m/%Y', tanggal) AS tgl FROM transaksi ORDER BY transaksi_id DESC";
+                query_jumlah = "SELECT COUNT(status) AS total, (SELECT COUNT(status) FROM transaksi WHERE status='Sehat') as sehat," +
+                        "(SELECT COUNT (status) FROM transaksi WHERE status='Tdksehat') as tdksehat FROM transaksi";
                 Sk_adapter();
             }
         });
@@ -71,10 +82,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         query_sk = "SELECT *, strftime('%d/%m/%Y', tanggal) AS tgl FROM transaksi ORDER BY transaksi_id DESC";
-
+        query_jumlah = "SELECT COUNT(status) AS total, (SELECT COUNT(status) FROM transaksi WHERE status='Sehat') as sehat," +
+                "(SELECT COUNT (status) FROM transaksi WHERE status='Tidak Sehat') as tdksehat FROM transaksi";
         Sk_adapter();
     }
 
@@ -114,6 +126,21 @@ public class MainActivity extends AppCompatActivity {
                 listMenu();
             }
         });
+
+        SkJumlah();
+    }
+
+    private void SkJumlah(){
+        NumberFormat digit = NumberFormat.getInstance(Locale.GERMANY);
+
+        SQLiteDatabase database = sqliteHelper.getReadableDatabase();
+        cursor = database.rawQuery(query_jumlah, null);
+        cursor.moveToFirst();
+
+        text_sehat.setText(digit.format(cursor.getDouble(1)));
+        text_tdksehat.setText(digit.format(cursor.getDouble(2)));
+        text_jumlah.setText(digit.format(cursor.getDouble(1) + cursor.getDouble(2))
+        );
     }
 
     private void listMenu(){
