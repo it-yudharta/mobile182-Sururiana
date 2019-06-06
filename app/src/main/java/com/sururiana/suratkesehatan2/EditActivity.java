@@ -94,8 +94,8 @@ public class EditActivity extends AppCompatActivity {
                 } else {
                     SQLiteDatabase database = sqliteHelper.getWritableDatabase();
                     database.execSQL(
-                            "UPDATE transaksi SET status='" + status + "',nama='" + edit_nama.getText().toString() + "',berat='" + edit_berat.getText().toString() + "'," +
-                                    "tinggi='" + edit_tinggi.getText().toString() + "',tensi='" + edit_tensi.getText().toString() + "',keterangan='" + edit_keterangan.getText().toString() + "' WHERE transaksi_id='" + M.transaksi_id + "')"
+                            "UPDATE transaksi SET status='" + status + "', nama='" + edit_nama.getText().toString() +"', berat='" + edit_berat.getText().toString() +"'," +
+                                    "tinggi='" + edit_tinggi.getText().toString() +"', tensi='" + edit_tensi.getText().toString() + "',keterangan='" + edit_keterangan.getText().toString() + "' WHERE transaksi_id='" + M.transaksi_id + "'"
                     );
                     Toast.makeText(EditActivity.this, "Data berhasil di simpan", Toast.LENGTH_LONG).show();
                     finish();
