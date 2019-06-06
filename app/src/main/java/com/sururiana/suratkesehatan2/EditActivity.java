@@ -78,11 +78,11 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-        edit_nama.setText("Nama : "+(cursor.getString(2)));
-        edit_berat.setText("Berat : "+cursor.getString(3));
-        edit_tinggi.setText("Tinggi : "+cursor.getString(4));
-        edit_tensi.setText("Tekanan Darah : "+cursor.getString(5));
-        edit_keterangan.setText("Keterangan : "+cursor.getString(6));
+        edit_nama.setText((cursor.getString(2)));
+        edit_berat.setText((cursor.getString(3)));
+        edit_tinggi.setText(cursor.getString(4));
+        edit_tensi.setText(cursor.getString(5));
+        edit_keterangan.setText(cursor.getString(6));
 
         rip_simpan.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
