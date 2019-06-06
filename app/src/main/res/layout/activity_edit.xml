@@ -20,35 +20,92 @@
                 android:orientation="vertical"
                 android:padding="10dp"
                 >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="NAMA"
+                    android:textSize="17sp"/>
                 <EditText
                     android:id="@+id/edit_nama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:hint="Nama"
+                    android:layout_marginLeft="10dp"
                     />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="BERAT"
+                    android:textSize="17sp"/>
                 <EditText
                     android:id="@+id/edit_berat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:hint="Berat Badan"
+                    android:layout_marginLeft="10dp"
                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="TINGGI"
+                    android:textSize="17sp"/>
                 <EditText
                     android:id="@+id/edit_tinggi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:hint="Tinggi Badan"
+                    android:layout_marginLeft="10dp"
                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="TENSI"
+                    android:textSize="17sp"/>
                 <EditText
                     android:id="@+id/edit_tensi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:hint="Tekanan Darah"
+                    android:layout_marginLeft="10dp"
                     />
+            </LinearLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keterangan"
+                    android:textSize="17sp"
+                    android:layout_marginTop="10dp"/>
                 <EditText
                     android:id="@+id/edit_keterangan"
                     android:layout_width="match_parent"
